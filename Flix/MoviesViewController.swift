@@ -10,10 +10,7 @@ import AlamofireImage
 
 class MoviesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    
-    
     @IBOutlet weak var tableView: UITableView!
-    
     var movies = [[String: Any]]()
     
     override func viewDidLoad() {
@@ -34,8 +31,8 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
               let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
             
             self.movies = dataDictionary["results"] as! [[String:Any]]
-
-            self.tableView.reloadData()
+            
+            self.tableView.reloadData() // Movies are now imported, must reload to see.
             print(dataDictionary)
 
            }
@@ -50,35 +47,21 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell") as! MovieCell
         
+//      Gets the Movie Details
         let movie = movies[indexPath.row]
         let title = movie["title"] as! String
         let description = movie["overview"] as! String
         
-        
-        cell.titleLabel!.text = title
-        cell.descriptionLabel!.text = description
-        
+//      Downloads the Movie Picture
         let baseUrl = "https://image.tmdb.org/t/p/w500"
         let posterPath = movie["poster_path"] as! String
-        
         let posterUrl = URL(string: baseUrl + posterPath)
         
+//      Updates screen elements
+        cell.titleLabel!.text = title
+        cell.descriptionLabel!.text = description
         cell.posterView.af.setImage(withURL: posterUrl!)
-//        cell.posterView!.image = poster
-        
         
         return cell
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
