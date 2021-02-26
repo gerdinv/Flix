@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B7EEBDB25E792B500B04984 /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7EEBDA25E792B500B04984 /* MovieDetailsViewController.swift */; };
 		0B8A652B25DE4BF4005C6923 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8A652A25DE4BF4005C6923 /* AppDelegate.swift */; };
 		0B8A652D25DE4BF4005C6923 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8A652C25DE4BF4005C6923 /* SceneDelegate.swift */; };
 		0B8A653225DE4BF4005C6923 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B8A653025DE4BF4005C6923 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B7EEBDA25E792B500B04984 /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
 		0B8A652725DE4BF4005C6923 /* Flix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B8A652A25DE4BF4005C6923 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B8A652C25DE4BF4005C6923 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 			children = (
 				0B8A652A25DE4BF4005C6923 /* AppDelegate.swift */,
 				0B8A652C25DE4BF4005C6923 /* SceneDelegate.swift */,
+				0B7EEBDA25E792B500B04984 /* MovieDetailsViewController.swift */,
 				0B8A653025DE4BF4005C6923 /* Main.storyboard */,
 				0B8A656025DE5390005C6923 /* MoviesViewController.swift */,
 				0BDF2CCD25DEEBBE0009EFDB /* MovieCell.swift */,
@@ -409,6 +412,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B7EEBDB25E792B500B04984 /* MovieDetailsViewController.swift in Sources */,
 				0B8A652B25DE4BF4005C6923 /* AppDelegate.swift in Sources */,
 				0B8A652D25DE4BF4005C6923 /* SceneDelegate.swift in Sources */,
 				0BDF2CCE25DEEBBE0009EFDB /* MovieCell.swift in Sources */,

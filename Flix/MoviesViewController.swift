@@ -26,15 +26,12 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         let task = session.dataTask(with: request) { (data, response, error) in
            // This will run when the network request returns
            if let error = error {
-              print(error.localizedDescription)
+            print(error.localizedDescription)
            } else if let data = data {
-              let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
+            let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
             
             self.movies = dataDictionary["results"] as! [[String:Any]]
-            
             self.tableView.reloadData() // Movies are now imported, must reload to see.
-            print(dataDictionary)
-
            }
         }
         task.resume()
@@ -63,5 +60,19 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         cell.posterView.af.setImage(withURL: posterUrl!)
         
         return cell
+    }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        //Find the selected movie
+        let cell = sender as! UITableViewCell
+        let indexPath = tableView.indexPath(for: cell)!
+        let movie = movies[indexPath.row]
+        
+        //Pass the selected movie to the details View Controller
+        let detailsViewController = segue.destination as! MovieDetailsViewController
+        detailsViewController.movie = movie
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
